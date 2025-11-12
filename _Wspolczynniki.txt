@@ -1,0 +1,38 @@
+1. Fourier Descriptors (FDs)
+    Opis: Transformata Fouriera konturu obiektu.
+    Zalety: Dobre do analizy konturów, odporne na rotacje, przesunięcia i skalowanie (po odpowiednim przetworzeniu).
+    Zastosowanie: Analiza i klasyfikacja kształtów na podstawie konturu.
+
+2. Moment Centralne i Skalowane
+    Opis: Są to klasyczne momenty (centralne, skalowane), z których wywodzą się m.in. momenty Hu.
+    Zastosowanie: Podstawowe opisywanie rozkładu masy pikseli, mogą być wykorzystane jako cechy wejściowe.
+
+3. Moment Legendre’a
+    Opis: Ortogonalne momenty oparte na wielomianach Legendre’a.
+    Cechy: Dobrze nadają się do kompresji informacji i są mniej podatne na redundancję.
+    Zastosowanie: Rozpoznawanie obrazów i klasyfikacja obiektów.
+
+4. Moment Tchebychev’a
+    Opis: Oparte na wielomianach Czebyszewa.
+    Zalety: Są ortogonalne, co redukuje współliniowość między cechami.
+    Zastosowanie: Używane do rozpoznawania kształtów, podobnie jak Zernike.
+
+5. Moment Pseudo-Zernike
+    Opis: Rozszerzenie Zernike, ale z inną bazą funkcji – lepiej odwzorowują nierównomierności kształtu.
+    Zalety: Często bardziej stabilne przy zakłóceniach.
+
+6. Momenty Eliptyczne / Eccentricity, Solidity, Extent
+    Opis: Miary geometryczne dostępne np. przez regionprops w skimage.
+    Zalety: Łatwe do interpretacji; np. ekscentryczność, stosunek powierzchni do otaczającego prostokąta, wypełnienie itd.
+    Zastosowanie: Do prostych klasyfikatorów, interpretowalność.
+
+7. Polar-Fourier Descriptors (PFD)
+    Opis: Łączą cechy przestrzeni biegunowej i Fouriera.
+    Zalety: Odporność na przesunięcia i rotacje; silna reprezentacja kształtu.
+
+Co warto zastosować?
+
+Jeśli zależy Ci na odporności na:
+    Rotację i przesunięcia → Fourier Descriptors, Pseudo-Zernike, momenty Tchebychev’a
+    Złożoność kształtu i ekspresyjność → Pseudo-Zernike, Legendre, FD
+    Szybkie wyliczenie i prostota → Hu, regionprops, momenty centralne

@@ -1,0 +1,347 @@
+\begin{tabular}{llrrrl}
+\toprule
+                              Classifier &          Metrics &   Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                                         &              ACC & 0.762 &  0.819 &   0.958 &                       \\
+                                         &              F1  & 0.792 &  0.829 &   0.957 &                       \\
+                                         &              PPV & 0.704 &  0.784 &   0.987 &                       \\
+Perceptron (Single-layer Neural Network) &              FAR & 0.381 &  0.242 &   0.012 &                   --- \\
+                                         &              FRR & 0.094 &  0.121 &   0.071 &                       \\
+                                         &              TPR & 0.906 &  0.879 &   0.929 &                       \\
+                                         &              TNR & 0.619 &  0.758 &   0.988 &                       \\
+                                         &   TrainTime [ms] & 1.14/1.11/1.10 &                       \\
+                                         & PredictTime [ms] & 0.61/0.60/0.60 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+            Classifier &          Metrics &    Raw &   Norm. &  Scaled & Classifier parameters \\
+\midrule
+                       &              ACC &  0.830 &   0.994 &   0.995 &                       \\
+                       &              F1  &  0.817 &   0.994 &   0.995 &                       \\
+                       &              PPV &  0.886 &   1.000 &   1.000 &                       \\
+Multi-layer Perceptron &              FAR &  0.098 &   0.000 &   0.000 &                   --- \\
+                       &              FRR &  0.242 &   0.012 &   0.010 &                       \\
+                       &              TPR &  0.758 &   0.988 &   0.990 &                       \\
+                       &              TNR &  0.902 &   1.000 &   1.000 &                       \\
+                       &   TrainTime [ms] & 59.97/161.77/68.98 &                       \\
+                       & PredictTime [ms] & 0.65/0.71/0.67 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+                                        Classifier &          Metrics &   Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                                                   &              ACC & 0.773 &  0.631 &   0.943 &                       \\
+                                                   &              F1  & 0.706 &  0.726 &   0.945 &                       \\
+                                                   &              PPV & 1.000 &  0.577 &   0.908 &                       \\
+SVC (Support Vector Classifier / Support Vector... &              FAR & 0.000 &  0.717 &   0.100 &                   --- \\
+                                                   &              FRR & 0.454 &  0.021 &   0.015 &                       \\
+                                                   &              TPR & 0.546 &  0.979 &   0.985 &                       \\
+                                                   &              TNR & 1.000 &  0.283 &   0.900 &                       \\
+                                                   &   TrainTime [ms] & 1.13/1.12/1.12 &                       \\
+                                                   & PredictTime [ms] & 0.66/0.66/0.66 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+              Classifier &          Metrics &   Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                         &              ACC & 0.970 &  0.970 &   0.970 &                       \\
+                         &              F1  & 0.969 &  0.969 &   0.969 &                       \\
+                         &              PPV & 1.000 &  1.000 &   1.000 &                       \\
+Decision Tree Classifier &              FAR & 0.000 &  0.000 &   0.000 &                   --- \\
+                         &              FRR & 0.060 &  0.060 &   0.060 &                       \\
+                         &              TPR & 0.940 &  0.940 &   0.940 &                       \\
+                         &              TNR & 1.000 &  1.000 &   1.000 &                       \\
+                         &   TrainTime [ms] & 1.08/1.07/1.07 &                       \\
+                         & PredictTime [ms] & 0.62/0.62/0.62 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+                 Classifier &          Metrics &   Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                            &              ACC & 0.831 &  0.711 &   0.704 &                       \\
+                            &              F1  & 0.854 &  0.772 &   0.769 &                       \\
+                            &              PPV & 0.754 &  0.638 &   0.631 &                       \\
+KNeighbors Classifier (kNN) &              FAR & 0.321 &  0.556 &   0.577 &                   --- \\
+                            &              FRR & 0.017 &  0.021 &   0.015 &                       \\
+                            &              TPR & 0.983 &  0.979 &   0.985 &                       \\
+                            &              TNR & 0.679 &  0.444 &   0.423 &                       \\
+                            &   TrainTime [ms] & 0.89/0.90/0.90 &                       \\
+                            & PredictTime [ms] & 0.90/0.90/0.90 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+                       Classifier &          Metrics &   Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                                  &              ACC & 0.972 &  0.970 &   0.970 &                       \\
+                                  &              F1  & 0.971 &  0.969 &   0.969 &                       \\
+                                  &              PPV & 1.000 &  1.000 &   1.000 &                       \\
+GaussianNB (Gaussian Naive Bayes) &              FAR & 0.000 &  0.000 &   0.000 &                   --- \\
+                                  &              FRR & 0.056 &  0.060 &   0.060 &                       \\
+                                  &              TPR & 0.944 &  0.940 &   0.940 &                       \\
+                                  &              TNR & 1.000 &  1.000 &   1.000 &                       \\
+                                  &   TrainTime [ms] & 0.95/0.95/0.95 &                       \\
+                                  & PredictTime [ms] & 0.64/0.64/0.64 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+                                        Classifier &          Metrics &   Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                                                   &              ACC & 0.761 &  0.783 &   0.959 &                       \\
+                                                   &              F1  & 0.795 &  0.794 &   0.958 &                       \\
+                                                   &              PPV & 0.698 &  0.756 &   0.989 &                       \\
+SGD Classifier (Stochastic Gradient Descent Cla... &              FAR & 0.400 &  0.271 &   0.010 &                   --- \\
+                                                   &              FRR & 0.077 &  0.162 &   0.071 &                       \\
+                                                   &              TPR & 0.923 &  0.838 &   0.929 &                       \\
+                                                   &              TNR & 0.600 &  0.729 &   0.990 &                       \\
+                                                   &   TrainTime [ms] & 1.16/1.15/1.15 &                       \\
+                                                   & PredictTime [ms] & 0.61/0.61/0.61 &                       \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{llrrrl}
+\toprule
+              Classifier &          Metrics &    Raw &  Norm. &  Scaled & Classifier parameters \\
+\midrule
+                         &              ACC &  0.988 &  0.988 &   0.988 &                       \\
+                         &              F1  &  0.987 &  0.987 &   0.987 &                       \\
+                         &              PPV &  1.000 &  1.000 &   1.000 &                       \\
+Random Forest Classifier &              FAR &  0.000 &  0.000 &   0.000 &                   --- \\
+                         &              FRR &  0.025 &  0.025 &   0.025 &                       \\
+                         &              TPR &  0.975 &  0.975 &   0.975 &                       \\
+                         &              TNR &  1.000 &  1.000 &   1.000 &                       \\
+                         &   TrainTime [ms] & 73.80/73.37/73.40 &                       \\
+                         & PredictTime [ms] &  4.38/4.33/4.34 &                       \\
+\bottomrule
+\end{tabular}
+
+
+
+
+
+Year    Technology Used     Application     Limitations
+2014    Geometric-based feature extraction [2]  Security & Access Control   Affected by pose variations and lighting
+2015    Smartphone-based ear biometrics [16]    Patient identification  Requires controlled imaging conditions
+2019    Ear-based forensic analysis [13]    Forensic Science    Accuracy affected by occlusions and noise
+2021    Deep learning (CNN) for security [11]   Surveillance & Identification   Requires large labeled training datasets
+2023    Machine learning for forensic sex estimation [13]   Forensic Science    Variability in dataset representation
+2024    Secure wearable ear biometrics [17]     Multi-modal biometric authentication    High computational cost
+
+[2] S. Singh and S.K. Singla, “A review on biometrics and ear recognition techniques,” International Journal of Advanced Research in Computer Science, vol. 3, no. 6, 2013.
+[16] Z. Wang, Y. Wang, and J. Yang, ”Earslide: a secure ear wearables biometric authentication based on acoustic fingerprint,” Proceedings of the ACM International Conference on Mobile Systems, Applications, and Services, 2024. Available: ACM
+[13] S. Ö. Akyol and N. Sezgin, ”Investigation of the effect of ear measurements on sex estimation in forensic sciences using machine learning techniques,” Forensic Science International, vol. 321, pp. 112–124, 2023. Available: ResearchGate
+[11] S. Jahan, M. Chowdhury, and R. Islam, ”Robust user authentication model for securing electronic healthcare system using fingerprint biometrics,” Journal of Information Security and Applications, vol. 45, pp. 101–118, 2019. Available: Taylor & Francis
+[17] M. Burge and W. Burger, ”Current and future biometrics: technology and applications,” Taylor & Francis, 2022. Available: Taylor & Francis
+
+
+Napisać, ze wadą Deep learning była zależna od modelu nauczania. 
+Do tej pory nie zdefiniowano modelu, który były najlepszy dla tego typu rozwiązań.
+Dodatkowo wadą Deep learning jest potrzeba dużej liczby obrazów jako zbiór uczący oraz długi czas uczenia i testowania, które
+oszacowano m.in. w pracy [4].
+
+
+
+
+Metody Deep learning:
+1. Ear Biometric: A Deep Learning Approach
+Pritha Singha Roy, Vinay Kukreja, Vishal Jain, Satvik Vats
+Accuracy: 99% (Own dataset)
+2023 5th International Conference on Inventive Research in Computing Applications (ICIRCA), IEEE
+
+2. An Ensemble Deep Learning based Approach for Ear Recognition
+Parul Chutani, Nitin Sharma
+Accuracy: 91-99% (UERC and IIT-D dataset) depend of model.
+Joint Journal of Novel Carbon Resource Sciences & Green Asia Strategy, Vol. 12(1), pp. 399-422, 2025
+
+3. Advancing Ear Biometrics: Enhancing Accuracy and Robustness through Deep Learning
+Youssef Mohamed, Zeyad Youssef, Ahmed Heakl, Ahmed Bayomy
+Accuracy: 98-99% (AMI and EarNV1.0 dataset).
+2024 Intelligent Methods, Systems, and Applications (IMSA), IEEE
+
+4. DANNET: deep attention neural network for efficient ear identification in biometrics.
+Alex DM, M KC, Mengash HA, M VD, Kryvinska N, J CB, Kiran A. 
+Accuracy: 84-99 (EarVN1.0, AMI, and Human Face datasets) depend of model
+PeerJ Comput Sci. 2024
+
+5. Boosting the Performance of Deep Ear Recognition Systems Using Generative Adversarial Networks and Mean Class Activation Maps.
+Bouaouina, R.; Benzaoui, A.; Doghmane, H.; Brik, Y.
+Accuracy: 76-100 (MAI and AWE dataset) depend of model
+Appl. Sci. 14, 4162, 2024.
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+Zalety przedstawionej metody:
+- In contrast, the present work eliminates this sensitivity by employing stable geometric features of the ear based on contour analysis and convex hull extraction, which remain robust to minor rotations and deformations.
+- In contrast, the proposed approach relies on simple yet effective preprocessing steps (cropping, adaptive binarization, skeletonization) that do not require training or large data collections.
+- The method presented in this study maintains low computational cost and high efficiency, making it suitable for real-time systems or devices with limited resources.
+- The proposed system, by contrast, uses classical classifiers (e.g., k-NN, Random Forest, SVC), achieving about 99\% accuracy without deep learning, while demonstrating high consistency across classifiers and data scaling techniques.
+- In this work, the geo-metric features are inherently interpretable and require minimal calibration, yet still enable precise user discrimination.
+- In contrast, the presented geometry-based approach is so efficient that it can be deployed even on low-power systems without the need for hardware acceleration.
+- In this work, the geo-metric features are inherently interpretable and require minimal calibration, yet still enable precise user discrimination.
+
+
+Metody oparte na cechach ręcznie projektowanych (curvelet, LBP, Gabor, SIFT, GLCM) osiągały 94–97 skuteczności na znanych bazach danych.
+Hybrydowe podejścia 2D/3D pozwalały na spore uproszczenie procesu rejestracji (bez głębokich architektur), co czyni je bardziej praktycznymi w systemach czasu rzeczywistego.
+Przeglądy literatury wskazują, że tradycyjne metody nadal dominują – szczególnie tam, gdzie dane treningowe są ograniczone, a interpretowalność ważna.
+
+
+1. Automated human identification using ear imaging.
+Ajay Kumar and Chenye Wu
+Accuracy: 96% 
+Comment: morphological operators, Fourier descriptors, Gabor filters
+Pattern Recognition, vol.45(3), pp. 956-968, 2012.
+
+2. A human ear recognition method using nonlinear curvelet feature subspace. 
+Basit, A., & Shoaib, M. 
+Accuracy: 97.77% (IIT Delhi dataset).
+Comment: Fast Discrete Curvelet Transform with kNN classifier.
+International Journal of Computer Mathematics, 91(3), 616–624, (2013).
+
+3. Human ear recognition using SIFT features
+A.S. Anwar, K. K. A. Ghany and H. ElMahdy
+Accuracy: 95.2-100% (IIT Delphi and AMI dataset)
+Comment: Image processing and SIFT method.
+2015 Third World Conference on Complex Systems (WCCS), Marrakech, Morocco, pp. 1-6, 2015
+
+4. An Ear Biometric System based on Artificial Bees and the Scale Invariant Feature Transform
+Lamis Ghoualmi, Amer Draa, Salim Chikhi
+Accuracy: 94.79-99.6% (depend of dataset)
+Comment: Image processing, Artificial Bee Colony (ABC) and SIFT method.
+Expert Systems with Applications, 57:49–61, 2016.
+
+5. Biometric Security: A Novel Ear Recognition Approach Using a 3D Morphable Ear Model
+Md Mursalin, Mohiuddin Ahmed and Paul Haskell-Dowland
+Accuracy: 98.51%
+Comment: 3D morphable ear model (3DMEM) and similarity measures
+Sensors 22(22), 8988, 2022
+
+
+
+
+
+
+
+
+
+
+
+Rotacja badania:
+                                                             0       5       10      15      20      25
+Perceptron (Single-layer Neural Network)                   0.971   0.884   0.845   0.804   0.770   0.716
+Multi-layer Perceptron                                     0.995   0.924   0.855   0.828   0.774   0.723
+SVC (Support Vector Classifier / Support Vector Machine)   0.910   0.895   0.879   0.824   0.776   0.695
+Decision Tree Classifier                                   0.970   0.883   0.922   0.904   0.867   0.720
+KNeighbors Classifier (kNN)                                0.820   0.756   0.742   0.749   0.708   0.673
+GaussianNB (Gaussian Naive Bayes)                          0.949   0.744   0.660   0.660   0.612   0.573
+SGD Classifier (Stochastic Gradient Descent Classifier)    0.962   0.902   0.844   0.817   0.786   0.721
+Random Forest Classifier                                   0.986   0.892   0.872   0.845   0.819   0.725
+
+W celu oceny odporności badanych klasyfikatorów na zaburzenia geometryczne, przeprowadzono eksperyment polegający na rotacji obrazów ucha o wybrane kąty: 5°, 10°, 15°, 20° oraz 25°, zgodnie z ruchem wskazówek zegara. Wyniki przedstawiające dokładność klasyfikacji (accuracy) dla poszczególnych modeli przy różnych stopniach rotacji pokazują, że zniekształcenie tego typu wyraźnie wpływa na skuteczność działania systemu biometrycznego. Mimo że dla większości modeli początkowa skuteczność (przy braku rotacji) była bardzo wysoka – często przekraczająca 95% – to już przy niewielkich kątach obrotu zauważalny jest stopniowy spadek dokładności.
+
+Największą odporność na rotację wykazały klasyfikatory Multi-layer Perceptron oraz Random Forest. Nawet przy rotacjach sięgających 20°–25°, ich skuteczność utrzymywała się na poziomie powyżej 72%, co świadczy o ich zdolności do uogólniania informacji przestrzennej i adaptacji do zniekształconych danych. Równie dobrze poradził sobie klasyfikator oparty na drzewach decyzyjnych, który do kąta 20° utrzymywał bardzo wysoką dokładność, przewyższając w tym zakresie nawet model SVC. Warto zaznaczyć, że klasyfikator oparty na regresji SGD również wykazał się dobrą stabilnością wyników, chociaż z nieco większym spadkiem przy wyższych wartościach rotacji.
+
+Z drugiej strony, klasyfikatory GaussianNB oraz kNN okazały się najmniej odporne na rotację. Ich dokładność szybko malała wraz ze wzrostem kąta obrotu, co może wynikać z ich dużej wrażliwości na zmiany w układzie przestrzennym cech. W przypadku GaussianNB problemem może być założenie o rozkładzie normalnym danych, który przestaje być spełniony po rotacji obrazów, natomiast w przypadku kNN decydująca może być bezpośrednia zależność od odległości euklidesowych w surowej przestrzeni cech.
+
+Uzyskane wyniki wskazują, że nawet niewielka rotacja obrazu wejściowego może istotnie wpłynąć na dokładność klasyfikacji, co w praktycznych zastosowaniach – takich jak identyfikacja użytkownika w aplikacjach mobilnych – może prowadzić do obniżenia jakości działania systemu. Dlatego w celu zwiększenia odporności na tego rodzaju zakłócenia, warto rozważyć zastosowanie augmentacji danych w procesie treningu, w tym losowego obracania obrazów ucha w niewielkich zakresach kątowych. Alternatywnie, możliwe jest również wprowadzenie procedur normalizacji pozycji ucha lub wykorzystanie cech geometrycznych odpornych na rotację, co mogłoby zwiększyć niezawodność klasyfikatorów w warunkach rzeczywistych.
+
+
+Bez szumu:
+Perceptron (Single-layer Neural Network)                    0.958
+Multi-layer Perceptron                                      0.995
+SVC (Support Vector Classifier / Support Vector Machine)    0.943
+Decision Tree Classifier                                    0.970
+KNeighbors Classifier (kNN)                                 0.704
+GaussianNB (Gaussian Naive Bayes)                           0.970
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.959
+Random Forest Classifier                                    0.988
+
+Mały szum (25%):
+Perceptron (Single-layer Neural Network)                    0.924
+Multi-layer Perceptron                                      0.990
+SVC (Support Vector Classifier / Support Vector Machine)    0.936
+Decision Tree Classifier                                    0.945
+KNeighbors Classifier (kNN)                                 0.698
+GaussianNB (Gaussian Naive Bayes)                           0.899
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.939
+Random Forest Classifier                                    0.971
+
+Szum (50%):
+Perceptron (Single-layer Neural Network)                    0.905
+Multi-layer Perceptron                                      0.972
+SVC (Support Vector Classifier / Support Vector Machine)    0.903
+Decision Tree Classifier                                    0.896
+KNeighbors Classifier (kNN)                                 0.757
+GaussianNB (Gaussian Naive Bayes)                           0.785
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.920
+Random Forest Classifier                                    0.917
+
+Duży szum (75%):
+Perceptron (Single-layer Neural Network)                    0.844
+Multi-layer Perceptron                                      0.949
+SVC (Support Vector Classifier / Support Vector Machine)    0.890
+Decision Tree Classifier                                    0.857
+KNeighbors Classifier (kNN)                                 0.685
+GaussianNB (Gaussian Naive Bayes)                           0.725
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.853
+Random Forest Classifier                                    0.896
+Quadratic Discriminant Analysis (QDA)                       0.629
+
+Mocne przyciemnienie:
+Perceptron (Single-layer Neural Network)                    0.674
+Multi-layer Perceptron                                      0.756
+SVC (Support Vector Classifier / Support Vector Machine)    0.693
+Decision Tree Classifier                                    0.601
+KNeighbors Classifier (kNN)                                 0.644
+GaussianNB (Gaussian Naive Bayes)                           0.541
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.661
+Random Forest Classifier                                    0.590
+
+Przyciemnienie:
+Perceptron (Single-layer Neural Network)                    0.861
+Multi-layer Perceptron                                      0.940
+SVC (Support Vector Classifier / Support Vector Machine)    0.914
+Decision Tree Classifier                                    0.848
+KNeighbors Classifier (kNN)                                 0.757
+GaussianNB (Gaussian Naive Bayes)                           0.698
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.854
+Random Forest Classifier                                    0.849
+
+Rozjaśnienie:
+Perceptron (Single-layer Neural Network)                    0.779
+Multi-layer Perceptron                                      0.888
+SVC (Support Vector Classifier / Support Vector Machine)    0.824
+Decision Tree Classifier                                    0.815
+KNeighbors Classifier (kNN)                                 0.745
+GaussianNB (Gaussian Naive Bayes)                           0.609
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.788
+Random Forest Classifier                                    0.809
+
+Mocne rozjaśnienie:
+Perceptron (Single-layer Neural Network)                    0.809
+Multi-layer Perceptron                                      0.910
+SVC (Support Vector Classifier / Support Vector Machine)    0.821
+Decision Tree Classifier                                    0.824
+KNeighbors Classifier (kNN)                                 0.744
+GaussianNB (Gaussian Naive Bayes)                           0.600
+SGD Classifier (Stochastic Gradient Descent Classifier)     0.818
+Random Forest Classifier                                    0.810
+
+
+W celu oceny odporności systemu na zakłócenia, przeprowadzono dwa typy eksperymentów: z dodanym szumem Gaussa oraz ze zmianą warunków oświetleniowych. Przykładowe obrazy ucha z narastającym poziomem szumu (mały szum, szum, duży szum) przedstawiono na rysunku X1, natomiast zależność skuteczności klasyfikatorów od intensywności szumu zilustrowano na wykresie na rysunku X2.
+Analiza wyników pokazała, że dokładność klasyfikacji ulega stopniowemu obniżeniu w miarę zwiększania poziomu zakłóceń. Mimo tego, niektóre modele – szczególnie sieć neuronowa typu Multi-layer Perceptron (MLP) oraz Random Forest – zachowały wysoką odporność na szum, uzyskując dokładności odpowiednio 0.949 i 0.896 nawet przy największym zaszumieniu. Z kolei klasyfikatory takie jak kNN i Gaussian Naive Bayes wykazują wyraźną podatność na degradację danych – ich dokładność spadła do poziomu poniżej 0.75.
+W drugiej części eksperymentów zbadano wpływ zmiennego oświetlenia. Analizie poddano obrazy mocno przyciemnione oraz silnie prześwietlone, symulujące warunki skrajnie słabego oraz zbyt intensywnego światła. Przykłady tych wariantów przedstawiono na rysunku X3. Odpowiednie wyniki klasyfikacji zestawiono w formie wykresu na rysunku X4. Eksperymenty wykazały, że najtrudniejszym przypadkiem dla wszystkich klasyfikatorów są obrazy mocno przyciemnione – nawet najlepsze modele, jak MLP czy SVM, osiągają dokładność jedynie 0.756 i 0.693. Dla umiarkowanego przyciemnienia wyniki są już znacznie lepsze, z dokładnością przekraczającą 0.94 dla MLP.
+W przypadku rozjaśniania, degradacja skuteczności klasyfikacji była zauważalna, lecz mniej drastyczna – najlepsze modele nadal osiągały dokładność powyżej 0.88 (MLP) i 0.82 (SVM, Random Forest). Największy wpływ na pogorszenie wyników zaobserwowano ponownie w modelach opartych na prostszych metodach, jak GaussianNB (spadek do ~0.60).
+Podsumowując, wyniki eksperymentów wskazują na istotną rolę wybranych cech oraz klasyfikatora w kontekście odporności systemu na typowe zakłócenia występujące w rzeczywistych warunkach. Modele oparte na sieciach neuronowych oraz metodach zespołowych okazują się najbardziej stabilne i skuteczne, co stanowi argument za ich preferencyjnym wykorzystaniem w praktycznych zastosowaniach biometrii ucha.
