@@ -136,7 +136,7 @@ def classification_LOPO_CV(df, classifier):
     })
 
 # Wczytanie danych do DataFrame.
-image_path = "Data/"
+image_path = "data/"
 file_name = "ear_data_aug_denoise_bright_light150.csv"
 
 df_RAW = pd.read_csv(image_path + file_name)
