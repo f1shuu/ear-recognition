@@ -3,20 +3,18 @@ import os
 import numpy as np
 from PIL import Image, ImageEnhance
 
-################################
-# Parametry augmentacji danych #
-################################
+#############
+# Parametry #
+#############
 
-INPUT_DIR = "photos/"  # Katalog z oryginalnymi zdjęciami
-OUTPUT_DIR = "photos/"  # Katalog docelowy dla przetworzonych zdjęć (domyślnie ten sam)
-ROTATE_ANGLE = 25  # Kąt obrotu obrazu w stopniach
-NOISE_STD_DEV = 0.5  # Odchylenie standardowe szumu Gaussa
-BRIGHTNESS_FACTOR = 0.75  # Współczynnik zmiany jasności
+INPUT_DIR = "photos/"    # Domyślny katalog ze zdjęciami
+ROTATE_ANGLE = 25        # Kąt obrotu obrazu w stopniach
+NOISE_STD_DEV = 0.5      # Odchylenie standardowe szumu Gaussa
+BRIGHTNESS_FACTOR = 0.75 # Współczynnik zmiany jasności
 
-#################################
-# Funkcje do augmentacji danych #
-#################################
-
+######################
+# Funkcje pomocnicze #
+######################
 
 # 1. Obrót obrazu o określony kąt
 def rotate_image(image, angle):
@@ -26,7 +24,6 @@ def rotate_image(image, angle):
     return cv2.warpAffine(
         image, M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT_101
     )
-
 
 # 2. Dodanie szumu Gaussa z podaną wartością odchylenia standardowego
 def add_gaussian_noise(image, std_dev):
@@ -42,7 +39,6 @@ def add_gaussian_noise(image, std_dev):
 
     return noisy
 
-
 # 3. Zmiana jasności obrazu przez określony współczynnik
 def change_brightness(image, factor):
     if len(image.shape) == 2:  # Grayscale
@@ -55,60 +51,66 @@ def change_brightness(image, factor):
         bright_img = cv2.cvtColor(np.array(bright_img), cv2.COLOR_RGB2BGR)
     return bright_img
 
+#####################
+# Główna część kodu #
+#####################
 
-################################
-# Początek głównej części kodu #
-################################
-
-file_list_before = sorted(os.listdir(INPUT_DIR))
+# Wybór katalogu ze zdjęciami do augmentacji
+user_input = ""
+while not os.path.isdir(user_input):
+    print("Wpisz nazwę katalogu z oryginalnymi zdjęciami (domyślnie: 'photos'):")
+    user_input = input("\n> ").strip()
+    if not user_input:
+        user_input = INPUT_DIR
+    if not os.path.isdir(user_input):
+        print(f"Błąd: Katalog '{user_input}' nie istnieje. Spróbuj ponownie.")
+    else:
+        INPUT_DIR = user_input
 
 print("Rozpoczynam augmentację danych...")
+file_list_before = sorted(os.listdir(INPUT_DIR))
 
 for file in file_list_before:
     file_name = os.path.splitext(file)[0]
+    file_ext = os.path.splitext(file)[1].lower()
     if file_name[-1:] == "0":
         file_name = file_name[:-2]
         image = cv2.imread(os.path.join(INPUT_DIR, file))
 
         # 1. Obrót obrazu o określony kąt
-        if not os.path.exists(os.path.join(OUTPUT_DIR, f"{file_name}_1.jpg")):
+        if not os.path.exists(os.path.join(INPUT_DIR, f"{file_name}_1{file_ext}")):
             rotated_image = rotate_image(image, ROTATE_ANGLE)
-            print("Tworzenie obrazu " + file_name + "_1.jpg...")
-            cv2.imwrite(os.path.join(OUTPUT_DIR, f"{file_name}_1.jpg"), rotated_image)
-        else:
-            print("Obraz " + file_name + "_1.jpg już istnieje, pomijanie...")
+            print("Tworzenie obrazu " + file_name + "_1" + file_ext + "...")
+            cv2.imwrite(os.path.join(INPUT_DIR, f"{file_name}_1{file_ext}"), rotated_image)
 
         # 2. Dodanie szumu Gaussa z podaną wartością odchylenia standardowego
-        if not os.path.exists(os.path.join(OUTPUT_DIR, f"{file_name}_2.jpg")):
+        if not os.path.exists(os.path.join(INPUT_DIR, f"{file_name}_2{file_ext}")):
             noisy_image = add_gaussian_noise(image, NOISE_STD_DEV)
-            print("Tworzenie obrazu " + file_name + "_2.jpg...")
-            cv2.imwrite(os.path.join(OUTPUT_DIR, f"{file_name}_2.jpg"), noisy_image)
-        else:
-            print("Obraz " + file_name + "_2.jpg już istnieje, pomijanie...")
+            print("Tworzenie obrazu " + file_name + "_2" + file_ext + "...")
+            cv2.imwrite(os.path.join(INPUT_DIR, f"{file_name}_2{file_ext}"), noisy_image)
 
         # 3. Zmiana jasności obrazu przez określony współczynnik
-        if not os.path.exists(os.path.join(OUTPUT_DIR, f"{file_name}_3.jpg")):
+        if not os.path.exists(os.path.join(INPUT_DIR, f"{file_name}_3{file_ext}")):
             brightened_image = change_brightness(image, BRIGHTNESS_FACTOR)
-            print("Tworzenie obrazu " + file_name + "_3.jpg...")
+            print("Tworzenie obrazu " + file_name + "_3" + file_ext + "...")
             cv2.imwrite(
-                os.path.join(OUTPUT_DIR, f"{file_name}_3.jpg"), brightened_image
+                os.path.join(INPUT_DIR, f"{file_name}_3{file_ext}"), brightened_image
             )
-        else:
-            print("Obraz " + file_name + "_3.jpg już istnieje, pomijanie...")
 
         # 4. Połączenie wszystkich transformacji
-        if not os.path.exists(os.path.join(OUTPUT_DIR, f"{file_name}_4.jpg")):
+        if not os.path.exists(os.path.join(INPUT_DIR, f"{file_name}_4{file_ext}")):
             combined_image = change_brightness(
                 add_gaussian_noise(rotate_image(image, ROTATE_ANGLE), NOISE_STD_DEV),
                 BRIGHTNESS_FACTOR,
             )
-            print("Tworzenie obrazu " + file_name + "_4.jpg...")
-            cv2.imwrite(os.path.join(OUTPUT_DIR, f"{file_name}_4.jpg"), combined_image)
-        else:
-            print("Obraz " + file_name + "_4.jpg już istnieje, pomijanie...")
+            print("Tworzenie obrazu " + file_name + "_4" + file_ext + "...")
+            cv2.imwrite(os.path.join(INPUT_DIR, f"{file_name}_4{file_ext}"), combined_image)
 
-file_list_after = sorted(os.listdir(OUTPUT_DIR))
+file_list_after = sorted(os.listdir(INPUT_DIR))
 
-print("Augmentacja zakończona.")
+print("\nAugmentacja zakończona.")
 print("Liczba obrazów przed augmentacją: " + str(len(file_list_before)))
-print("Liczba obrazów po augmentacji: " + str(len(file_list_after)))
+print("Liczba obrazów po augmentacji:    " + str(len(file_list_after)) + " (+" + str(len(file_list_after) - len(file_list_before)) + ")")
+if (len(file_list_before) * 5) != len(file_list_after) and len(file_list_before) != len(file_list_after):
+    print("Uwaga: Liczba obrazów po augmentacji nie jest równa 5-krotności liczby obrazów przed augmentacją.")
+    print("Sprawdź, czy wszystkie obrazy zostały poprawnie przetworzone.")

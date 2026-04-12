@@ -4,11 +4,13 @@ Niniejsze repozytorium stanowi część badawczą pracy magisterskiej pod tytuł
 
 **0_data_augmentation.py** przeprowadza proces augmentacji danych, czyli zwiększenia liczby próbek poprzez rotacje i nakładanie zakłóceń.
 
-**1_feature_extraction.py** #TODO
+**1_feature_extraction.py** ekstrahuje z przygotowanych obrazów 19 różnych parametrów, a następnie umieszcza je w pliku CSV wraz z parametrem decyzyjnym - ID użytkownika (właściciela danego ucha).
 
 **2_feature_visualization.py** #TODO
 
 **3_classification.py** #TODO
+
+**main.py** stanowi prosty program konsolowy, upraszczający proces uruchamiania dostępnych skryptów jeden po drugim.
 
 ### Uruchomienie
 
@@ -23,7 +25,7 @@ Aby uruchomić projekt lokalnie, należy wykonać poniższe kroki.
 2. Uruchomienie środowiska wirtualnego
 
    ```bash
-   source .venv/bin/activate
+   .venv/Scripts/activate
    ```
 
 3. Zainstalowanie wymaganych bibliotek, których lista znajduje się w pliku `requirements.txt`
@@ -37,7 +39,3 @@ Aby uruchomić projekt lokalnie, należy wykonać poniższe kroki.
     ```bash
     python <nazwa_pliku>.py
     ```
-
-**Można też uruchomić wszystkie skrypty po kolei jednym poleceniem:**
-
-    python main.py

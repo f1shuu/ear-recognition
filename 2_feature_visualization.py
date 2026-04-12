@@ -1,15 +1,49 @@
+import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import seaborn as sns
 
+#############
+# Parametry #
+#############
+
+INPUT_DIR = "data/photos_ear_data.csv" # Domyślna ścieżka do pliku z danymi cech
+SELECTED_USERS = [5, 7, 12, 19, 20] # Lista wybranych użytkowników do wizualizacji
+
+#####################
+# Główna część kodu #
+#####################
+
+# Wybór pliku CSV z danymi cech
+user_input = ""
+while not os.path.isfile("data/" + user_input):
+    print("Wybierz plik CSV:")
+    if os.path.isdir("data"):
+        print("Pliki dostępne w /data:")
+        for file in os.listdir("data"):
+            print(f"  - {file}")
+    else:
+        print("Brak katalogu 'data' lub brak plików w tym katalogu.")
+        print("Najprawdopodobniej pominięto krok ekstrakcji cech.")
+        print("Proszę najpierw uruchomić opcję [2] - Ekstrakcja cech.")
+        sys.exit(0)
+    
+    user_input = input("\n> ").strip()
+    if not user_input.endswith(".csv"):
+        user_input += ".csv"
+    if user_input not in os.listdir("data"):
+        print(f"Błąd: Plik '{user_input}' nie istnieje. Spróbuj ponownie.")
+    else:
+        INPUT_DIR = "data/" + user_input
+
 # Wczytanie danych
-df = pd.read_csv("data/ear_data.csv")
+df = pd.read_csv(INPUT_DIR)
 
 # Wybranie dowolnych użytkowników
-selected_users = [22, 37, 44, 47, 48]
-df_filtered = df[df[df.columns[-1]].isin(selected_users)].copy()
+df_filtered = df[df[df.columns[-1]].isin(SELECTED_USERS)].copy()
 
 # Podzielenie danych i etykiet
 X = df_filtered.iloc[:, :-1].values
@@ -23,7 +57,6 @@ X_pca = pca.fit_transform(X)
 tsne = TSNE(n_components=2, random_state=0, perplexity=10, max_iter=1000)
 X_tsne = tsne.fit_transform(X)
 
-
 # Funkcja rysująca
 def plot_embedding(X_embedded, y, title):
     plt.figure(figsize=(8, 6))
@@ -35,7 +68,6 @@ def plot_embedding(X_embedded, y, title):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
-
 
 # Rysowanie wykresów
 plot_embedding(X_pca, y, "PCA (5 users)")

@@ -1,5 +1,7 @@
+/.playground
 /.venv
 /data
 /old_photos
 /photos
 /prints
+/processed_*
